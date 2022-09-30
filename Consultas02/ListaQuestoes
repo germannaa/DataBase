@@ -1,0 +1,13 @@
+Especifique as seguintes consultas em SQL.
+a) Mostre todos os pedidos que possuem uma peça Preta no pedido.
+b) Quais Fornecedores fornecem peças para o projeto 'Fome Zero'.
+------ Comandos utilizados GROUP BY e HAVING ------
+c) Encontre para cada peça fornecida: o nome da peça, a quantidade máxima e quantidade
+mínima em que esta peça é fornecida.
+d) Encontre para cada peça fornecida: o nome da peça e a quantidade total que esta peça é
+fornecida.
+e) Encontre para cada peça fornecida: o nome da peça e a média que esta peça é fornecida.
+f) Encontre os números de todas as peças que são fornecidas por mais de um fornecedor.
+Dica: comando HAVING
+g) Encontre a quantidade total fornecida por cada fornecedor nos pedidos.
+h) Média de peças pedidas por pedido.
