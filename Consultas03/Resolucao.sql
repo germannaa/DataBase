@@ -90,4 +90,9 @@ order by SALARY
 
 
 15.
+SET @row_number = 0;
+SELECT *, @row_number
+FROM employees
+where (@row_number:=@row_number+1) % 2 = 0;
 
+		
