@@ -96,3 +96,42 @@ select t.nome, count(pt.Pokemon_idPokemon) as qtdePokemon
 from treinador as t, pokemon_treinador as pt
 where t.idTreinador = pt.Treinador_idTreinador
 group by t.nome;
+
+
+
+select count(h.nome) as qtdeHabilidade, p.nome
+from habilidade as h, pokemon as p, habilidade_pokemon as hp
+where h.idHabilidade = hp.Habilidade_idHabilidade and hp.Pokemon_idPokemon = p.idPokemon
+group by p.nome
+
+
+
+select count(p.nome) as qtdeTotalPokemons
+from  pokemon as p
+
+
+select count(*) as qtdeTotalPokemons
+from  pokemon as p
+
+select t.nome
+from treinador as t, pokemon_treinador as pt
+where pt.Treinador_idTreinador = t.idTreinador 
+and pt.Pokemon_idPokemon = (select hp.Pokemon_idPokemon
+from habilidade_pokemon as hp, habilidade as h where hp.Pokemon_idPokemon = h.idHabilidade and h.nome = "fogo");
+
+
+select t.nome
+from treinador as t, pokemon_treinador as pt
+where pt.Treinador_idTreinador = t.idTreinador 
+and pt.Pokemon_idPokemon = (select hp.Pokemon_idPokemon
+from habilidade_pokemon as hp, habilidade as h where hp.Pokemon_idPokemon = h.idHabilidade and h.nome = "fogo");
+
+select count(t.nome)
+from treinador as t
+where t.idTreinador = (select pt.Treinador_idTreinador 	
+		       from pokemon_treinador as pt  
+		       where pt.Pokemon_idPokemon = ( select hp.Pokemon_idPokemon 
+						     from habilidade_pokemon as hp 
+						     where hp.Habilidade_idHabilidade = (select h.idHabilidade 
+											 from habilidade as h 
+											 where h.nome = "fogo")));
