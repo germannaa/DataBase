@@ -40,3 +40,8 @@ primary key (user_id, tweet_id),
 foreign key(user_id) references user(id),
 foreign key(tweet_id) references tweet(id)
 );
+
+
+
+alter table user_follows
+rename column user_followed_id to user_id;
