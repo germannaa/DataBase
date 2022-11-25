@@ -45,10 +45,14 @@ where u.id = (select uf.user_id
 						      
 5. Listar todos os tweets que tem “copa do mundo”
 no texto
-					
+
+select * from tweet
+where content like "%copa%do%mundo%";
+					   
 
 						      
 						      
 6. Listar todas as respostar de um determinado
 tweet (utilize o parent)
+					    
 						      
